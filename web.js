@@ -1,11 +1,11 @@
 var static = require('node-static');
-
-// Create a node-static server instance to serve the '.app' folder
-var file = new(static.Server)('./app');
-var port = process.env.PORT || 5000;
-require('http').createServer(function (request, repsonse) {
-	request.addListener('end', function() {
-		// Serve files!
-		file.serve(request, response);
-	});
+ 
+//
+// Create a node-static server instance to serve the './app' folder
+//
+var file = new(static.Server);
+var port = process.env.PORT || 8080;
+require('http').createServer(function (request, response) {
+    file.serve(request, response);
 }).listen(port);
+console.log('Node is running on port 8080');
