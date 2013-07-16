@@ -4,8 +4,8 @@ var static = require('node-static');
 // Create a node-static server instance to serve the './app' folder
 //
 var file = new(static.Server);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 require('http').createServer(function (request, response) {
     file.serve(request, response);
 }).listen(port);
-console.log('Node is running on port 8080');
+console.log('Node is running on port 5000');
